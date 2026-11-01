@@ -1,0 +1,80 @@
+@import url('./tokens.css');
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 var(--fuente); color: var(--marca-tinta); background: var(--marca-fondo); }
+header.app { background: linear-gradient(120deg, var(--marca-primario) 55%, var(--marca-acento) 130%); color: #fff; padding: 18px 20px 16px; }
+header.app .hola { margin: 0; font-size: .85rem; opacity: .85; }
+header.app h1 { margin: 0; font-size: 1.35rem; font-weight: 650; }
+header.app .sub { margin: 2px 0 0; font-size: .85rem; opacity: .9; }
+.aviso-sim { background: #fff7e0; color: #5c4300; padding: 8px 20px; font-size: .85rem; border-bottom: 1px solid #f0dca0; }
+.hoy-wrap { max-width: 1100px; margin: 0 auto; padding: 14px 16px 0; display: grid; gap: 10px; }
+.reloj { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.reloj strong { font-size: 1.05rem; }
+.hoy { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { background: var(--marca-superficie); border: 1px solid var(--marca-linea); border-radius: 999px; padding: 6px 14px; font-size: .88rem; }
+.chip b { font-size: 1rem; }
+.chip.atencion { border-color: #e8c476; background: #fff8e8; }
+.chip.ok { border-color: #bfe3cd; background: #eefaf2; }
+.pestanas { max-width: 1100px; margin: 0 auto; padding: 12px 16px 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.pestanas button { min-height: 44px; font-weight: 650; font-size: .95rem; }
+.pestanas button[aria-pressed="true"] { background: var(--marca-primario); border-color: var(--marca-primario); color: #fff; }
+main { max-width: 1100px; margin: 0 auto; padding: 16px; display: grid; gap: 16px; grid-template-columns: 1fr; }
+.cols { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .cols { grid-template-columns: 1.4fr 1fr; } }
+section { background: var(--marca-superficie); border: 1px solid var(--marca-linea); border-radius: var(--radio); padding: 16px; }
+section h2 { margin: 0 0 10px; font-size: 1.05rem; color: var(--marca-primario-oscuro); }
+section.trat h2 { color: var(--marca-acento-oscuro); }
+button { font: inherit; min-height: 40px; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--marca-primario); background: #fff; color: var(--marca-primario-oscuro); cursor: pointer; }
+button.principal { background: var(--marca-primario); color: #fff; }
+button.principal.acento { background: var(--marca-acento); border-color: var(--marca-acento); }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #f2b84b; outline-offset: 2px; }
+.cita { border-top: 1px solid var(--marca-linea); padding: 12px 0; }
+.cita:first-of-type { border-top: 0; }
+.cita .fila { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; align-items: baseline; }
+.cita .nombre { font-weight: 650; }
+.cita .meta { color: var(--marca-tinta-2); font-size: .9rem; }
+.acciones { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.acciones button { min-height: 36px; font-size: .85rem; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: .82rem; font-weight: 650; }
+.badge[data-e="Sin confirmar"] { background: var(--estado-sin-confirmar-fondo); color: var(--estado-sin-confirmar-texto); }
+.badge[data-e="Confirmada"], .badge[data-e="Activo"] { background: var(--estado-confirmada-fondo); color: var(--estado-confirmada-texto); }
+.badge[data-e="En riesgo"], .badge[data-e="Sin próxima cita"] { background: var(--estado-riesgo-fondo); color: var(--estado-riesgo-texto); }
+.badge[data-e="Cancelada"], .badge[data-e="En riesgo de abandono"] { background: var(--estado-cancelada-fondo); color: var(--estado-cancelada-texto); }
+.badge[data-e="Completado"] { background: var(--estado-completado-fondo); color: var(--estado-completado-texto); }
+.libre { margin-left: 6px; font-size: .82rem; font-weight: 650; color: var(--marca-primario-oscuro); }
+.alerta { border-left: 4px solid #d9921a; background: #fff8e8; padding: 8px 10px; margin: 6px 0; border-radius: 4px; font-size: .92rem; }
+.alerta.cancelada { border-color: #b3261e; background: #fdf0ee; }
+.vacio { color: var(--marca-tinta-2); font-size: .92rem; }
+.msg { border: 1px solid var(--marca-linea); border-radius: 8px; padding: 8px 10px; margin: 6px 0; font-size: .9rem; }
+.msg.entrante { background: #eef6f4; margin-left: 24px; }
+.msg small { display: block; color: var(--marca-tinta-2); }
+.tabs { display: flex; gap: 6px; margin-bottom: 8px; }
+.tabs button[aria-pressed="true"] { background: var(--marca-primario); color: #fff; }
+form.nueva { display: grid; gap: 8px; grid-template-columns: 1fr 1fr; margin-top: 8px; }
+form.nueva label { display: grid; gap: 2px; font-size: .85rem; color: var(--marca-tinta-2); }
+form.nueva input, form.nueva select { font: inherit; min-height: 40px; padding: 4px 8px; border: 1px solid var(--marca-linea); border-radius: 8px; }
+form.nueva button { grid-column: 1 / -1; }
+/* Tarjetas de tratamiento */
+.trat-card { border: 1px solid var(--marca-linea); border-left: 4px solid var(--marca-acento); border-radius: var(--radio); padding: 12px; margin: 10px 0; }
+.trat-card .fila { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; align-items: baseline; }
+.trat-card .nombre { font-weight: 650; }
+.trat-card .tipo { color: var(--marca-acento-oscuro); font-size: .9rem; }
+.trat-card .meta { color: var(--marca-tinta-2); font-size: .9rem; margin-top: 2px; }
+.progreso { margin: 8px 0 2px; }
+.progreso .barra { height: 8px; background: var(--marca-acento-fondo); border-radius: 999px; overflow: hidden; }
+.progreso .barra i { display: block; height: 100%; background: var(--marca-acento); border-radius: 999px; }
+.progreso small { color: var(--marca-tinta-2); }
+/* Métricas */
+.metricas { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
+@media (min-width: 700px) { .metricas { grid-template-columns: repeat(4, 1fr); } }
+.metrica { border: 1px solid var(--marca-linea); border-radius: var(--radio); padding: 12px; }
+.metrica .valor { font-size: 1.5rem; font-weight: 650; color: var(--marca-primario-oscuro); }
+.metrica .nombre { font-size: .85rem; color: var(--marca-tinta-2); }
+.metrica .meta-m { font-size: .8rem; color: var(--marca-tinta-2); margin-top: 4px; }
+.nota { font-size: .85rem; color: var(--marca-tinta-2); background: #fbf7ec; border: 1px solid #eee1b8; border-radius: 8px; padding: 8px 10px; }
+
+main > div, section { min-width: 0; }
+.cita .fila > span { min-width: 0; }
+body { overflow-x: hidden; }
+@media (max-width: 600px) { form.nueva { grid-template-columns: 1fr; } }
+
+[hidden] { display: none !important; }

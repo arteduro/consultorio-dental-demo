@@ -1,0 +1,20 @@
+/* Tokens de marca: fuente única. Ver .claude/skills/marca-consultorio/SKILL.md */
+:root {
+  --marca-primario: #0f6e66;      /* verde azulado, acciones y encabezados */
+  --marca-primario-oscuro: #0a4f49;
+  --marca-acento: #5b4a8a;        /* violeta suave: seguimiento de tratamientos */
+  --marca-acento-oscuro: #42346a;
+  --marca-acento-fondo: #efeaf8;
+  --marca-fondo: #f3f8f7;
+  --marca-superficie: #ffffff;
+  --marca-tinta: #1c2a2d;
+  --marca-tinta-2: #4a5a5e;
+  --marca-linea: #d6e3e1;
+  --estado-sin-confirmar-fondo: #eceff0; --estado-sin-confirmar-texto: #3b4a4e;
+  --estado-confirmada-fondo: #dff3e7;    --estado-confirmada-texto: #14663b;
+  --estado-riesgo-fondo: #fdecc8;        --estado-riesgo-texto: #7a4a00;
+  --estado-cancelada-fondo: #f9dcd9;     --estado-cancelada-texto: #8f1d14;
+  --estado-completado-fondo: #dbe9f7;    --estado-completado-texto: #174a7c;
+  --fuente: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --radio: 10px;
+}
