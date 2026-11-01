@@ -1,0 +1,6 @@
+{
+  "name": "consultorio-recordatorios",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test" }
+}

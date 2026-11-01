@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consultorio de la Dra. Laura · Citas y tratamientos</title>
+<link rel="stylesheet" href="src/styles.css"></head>
+<body>
+<header class="app">
+  <p class="hola">Hola, Marcela</p>
+  <h1>Consultorio de la Dra. Laura</h1>
+  <p class="sub">Recordatorios de citas y seguimiento de tratamientos</p>
+</header>
+<div class="aviso-sim" role="note">Demo interactiva: no envía mensajes ni conecta con calendarios reales.</div>
+<div class="hoy-wrap">
+  <div class="reloj"><strong id="reloj"></strong>
+    <button data-avance="30">+30 min</button><button data-avance="60">+1 h</button><button data-avance="1440">+1 día</button></div>
+  <div class="hoy" id="hoy"></div>
+</div>
+<nav class="pestanas" role="group" aria-label="Secciones">
+  <button id="p-citas" aria-pressed="true">Citas</button>
+  <button id="p-trat" aria-pressed="false">Tratamientos</button>
+  <button id="p-met" aria-pressed="false">Métricas</button>
+</nav>
+<main>
+  <div id="panel-citas" class="cols">
+    <div>
+      <section aria-labelledby="h-citas"><h2 id="h-citas">Citas</h2><div id="citas"></div>
+        <form class="nueva" id="nueva"><label>Paciente<input name="paciente" required value="Paciente Nuevo"></label>
+          <label>Teléfono<input name="telefono" required value="+57 3XX XXX 0199"></label>
+          <label>Cita en<select name="en"><option value="4320">3 días</option><option value="1440">1 día</option><option value="300">5 horas</option><option value="60">1 hora</option></select></label>
+          <button class="principal" type="submit">Crear cita en el calendario</button></form></section>
+    </div>
+    <div>
+      <section aria-labelledby="h-av"><h2 id="h-av">Avisos para la asistente</h2><div id="avisos"></div></section>
+      <section aria-labelledby="h-bj" style="margin-top:16px"><h2 id="h-bj">Bandeja de salida (WhatsApp)</h2>
+        <div class="tabs" role="group" aria-label="Bandeja"><button id="t-prog" aria-pressed="true">Programados</button><button id="t-env" aria-pressed="false">Enviados</button></div>
+        <div id="bandeja"></div></section>
+    </div>
+  </div>
+  <div id="panel-trat" hidden>
+    <section aria-labelledby="h-trat" class="trat"><h2 id="h-trat">Tratamientos en curso</h2><div id="tratamientos"></div>
+      <form class="nueva" id="nuevo-trat"><label>Paciente<input name="paciente" required value="Paciente Nuevo"></label>
+        <label>Teléfono<input name="telefono" required value="+57 3XX XXX 0198"></label>
+        <label>Tratamiento<select name="tipo"><option>endodoncia</option><option>ortodoncia</option><option>limpieza</option><option>diseño de sonrisa</option></select></label>
+        <label>Sesiones totales<select name="total"><option>2</option><option selected>3</option><option>4</option><option>6</option></select></label>
+        <button class="principal acento" type="submit">Registrar tratamiento</button></form></section>
+    <section aria-labelledby="h-bt" class="trat" style="margin-top:16px"><h2 id="h-bt">Bandeja de seguimiento (WhatsApp)</h2><div id="bandeja-trat"></div></section>
+  </div>
+  <div id="panel-met" hidden>
+    <section aria-labelledby="h-met"><h2 id="h-met">Métricas de éxito</h2>
+      <p class="nota">Contadores de esta demo interactiva, para ilustrar cómo se leerían las métricas de la spec (<code>docs/SPEC-tratamientos.md</code>).</p>
+      <div class="metricas" id="metricas"></div></section>
+  </div>
+</main>
+<script type="module" src="src/app.js"></script>
+</body></html>
